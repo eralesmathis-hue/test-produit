@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DustGuard — Percez sans laisser de poussière partout</title>
+
+  <meta name="description"
+        content="DustGuard récupère la poussière directement pendant le perçage pour garder votre espace de travail plus propre.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #171717;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    .topbar {
+      background: #111111;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    header {
+      max-width: 1100px;
+      margin: auto;
+      padding: 22px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .hero {
+      background: #f5f5f5;
+      padding: 70px 20px;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: white;
+      border-radius: 30px;
+      padding: 8px 15px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    .product-box {
+      background: white;
+      border-radius: 20px;
+      min-height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+      padding: 30px;
+    }
+
+    .product-placeholder {
+      text-align: center;
+      color: #777;
+      font-size: 18px;
+    }
+
+    .price {
+      font-size: 34px;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #111111;
+      color: white;
+      padding: 16px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      opacity: 0.85;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 45px;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .benefit {
+      border: 1px solid #e5e5e5;
+      border-radius: 15px;
+      padding: 30px;
+    }
+
+    .benefit h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .how {
+      background: #f7f7f7;
+      max-width: none;
+    }
+
+    .how-inner {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .step {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+    }
+
+    .step-number {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .faq {
+      max-width: 800px;
+    }
+
+    details {
+      border-bottom: 1px solid #ddd;
+      padding: 20px 0;
+    }
+
+    summary {
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #111111;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 750px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .benefits,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding: 18px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    Percez plus proprement — récupérez la poussière directement à la source
+  </div>
+
+  <header>
+    <div class="logo">DustGuard</div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-inner">
+
+        <div>
+          <div class="badge">Pour les bricoleurs</div>
+
+          <h1>
+            Percez sans répandre de poussière partout.
+          </h1>
+
+          <p>
+            Un collecteur compact conçu pour récupérer les poussières
+            directement autour du trou pendant le perçage.
+          </p>
+
+          <div class="price">24,90 €</div>
+
+          <a href="#commander" class="button">
+            Découvrir le produit
+          </a>
+        </div>
+
+        <div class="product-box">
+          <div class="product-placeholder">
+            IMAGE DU PRODUIT<br><br>
+            Nous ajouterons ici les vraies photos du produit.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">
+        Pourquoi l'utiliser ?
+      </h2>
+
+      <div class="benefits">
+
+        <div class="benefit">
+          <h3>Moins de nettoyage</h3>
+          <p>
+            La poussière est récupérée autour de la zone de perçage
+            au lieu de tomber directement sur le sol.
+          </p>
+        </div>
+
+        <div class="benefit">
+          <h3>Simple à utiliser</h3>
+          <p>
+            Un accessoire compact à placer autour de la zone
+            de perçage avant de commencer.
+          </p>
+        </div>
+
+        <div class="benefit">
+          <h3>Compact</h3>
+          <p>
+            Facile à ranger dans une caisse à outils ou un atelier.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="how">
+      <div class="how-inner">
+
+        <h2 class="section-title">
+          Comment ça fonctionne ?
+        </h2>
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="step-number">01</div>
+            <h3>Positionnez</h3>
+            <p>
+              Placez le collecteur autour de la zone à percer.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">02</div>
+            <h3>Percez</h3>
+            <p>
+              Effectuez votre perçage normalement.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">03</div>
+            <h3>Nettoyez facilement</h3>
+            <p>
+              Retirez le collecteur et videz les poussières récupérées.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="faq">
+
+      <h2 class="section-title">
+        Questions fréquentes
+      </h2>
+
+      <details>
+        <summary>Est-ce compatible avec toutes les perceuses ?</summary>
+        <p>
+          La compatibilité dépend du modèle utilisé et du diamètre
+          du foret. Les caractéristiques exactes seront indiquées
+          avant l'achat.
+        </p>
+      </details>
+
+      <details>
+        <summary>Est-ce que le produit récupère toute la poussière ?</summary>
+        <p>
+          Le produit est conçu pour limiter la dispersion des poussières
+          autour de la zone de perçage. Il ne remplace pas un système
+          d'aspiration professionnel.
+        </p>
+      </details>
+
+      <details>
+        <summary>Comment le nettoyer ?</summary>
+        <p>
+          Videz simplement les poussières récupérées après utilisation.
+        </p>
+      </details>
+
+    </section>
+
+    <section id="commander" style="text-align:center;">
+
+      <h2 class="section-title">
+        Gardez votre espace de travail plus propre.
+      </h2>
+
+      <p style="margin-bottom:25px;">
+        Nous préparons actuellement la disponibilité du produit.
+      </p>
+
+      <a href="#interet" class="button">
+        Être informé de la disponibilité
+      </a>
+
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 DustGuard — Tous droits réservés
+  </footer>
+
+</body>
+</html>
