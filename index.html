@@ -4,24 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="DustGuard — collecteur de poussière pour perceuse compatible avec les forets de 4 à 10 mm.">
-
   <title>DustGuard — Percez sans répandre de poussière partout</title>
 
-  <style>
-    :root {
-      --blue: #0878f9;
-      --blue-dark: #075fc7;
-      --black: #111111;
-      --text: #171717;
-      --muted: #68707d;
-      --light: #f5f7fa;
-      --border: #e6e9ee;
-      --white: #ffffff;
-    }
+  <meta name="description" content="DustGuard récupère les poussières autour de votre perçage pour limiter la dispersion et réduire le nettoyage.">
+  <meta name="theme-color" content="#111111">
 
+  <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -29,11 +21,9 @@
     }
 
     body {
-      margin: 0;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Arial, sans-serif;
-      color: var(--text);
-      background: white;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #171717;
+      background: #ffffff;
       line-height: 1.5;
     }
 
@@ -42,408 +32,341 @@
       color: inherit;
     }
 
-    /* TOP BAR */
-
     .topbar {
-      background: var(--black);
-      color: white;
+      background: #111111;
+      color: #ffffff;
       text-align: center;
-      padding: 9px 16px;
+      padding: 9px 15px;
       font-size: 13px;
-      font-weight: 700;
+      letter-spacing: .2px;
     }
 
-    /* NAVIGATION */
-
     header {
+      border-bottom: 1px solid #eeeeee;
+      background: #ffffff;
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(255,255,255,.96);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(10px);
     }
 
     .nav {
-      max-width: 1180px;
+      max-width: 1120px;
       margin: auto;
-      padding: 17px 22px;
+      height: 70px;
+      padding: 0 22px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .logo {
-      font-size: 23px;
-      font-weight: 850;
-      letter-spacing: -0.045em;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -1px;
     }
 
     .logo span {
-      color: var(--blue);
+      font-weight: 400;
     }
 
-    .nav-link {
+    .nav-button {
+      background: #111111;
+      color: white;
+      padding: 11px 18px;
+      border-radius: 8px;
       font-size: 14px;
       font-weight: 700;
-      color: #444;
     }
-
-    /* HERO */
 
     .hero {
-      max-width: 1180px;
+      background: #f7f7f5;
+      padding: 75px 22px 80px;
+    }
+
+    .hero-inner {
+      max-width: 1120px;
       margin: auto;
-      padding: 72px 22px 68px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 55px;
       align-items: center;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #eef6ff;
-      color: var(--blue-dark);
-      border-radius: 999px;
-      padding: 7px 12px;
+    .badge {
+      display: inline-block;
+      background: #e8e8e8;
+      color: #333333;
+      padding: 7px 11px;
+      border-radius: 20px;
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 700;
       margin-bottom: 18px;
     }
 
-    .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--blue);
-    }
-
     h1 {
-      font-size: clamp(43px, 6vw, 70px);
-      line-height: .98;
-      letter-spacing: -.055em;
-      margin: 0 0 22px;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.02;
+      letter-spacing: -2.5px;
+      margin-bottom: 22px;
     }
 
     .hero p {
-      color: var(--muted);
-      font-size: 18px;
-      max-width: 600px;
-      margin: 0 0 27px;
-    }
-
-    .price-row {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-bottom: 23px;
+      font-size: 19px;
+      color: #5d5d5d;
+      max-width: 560px;
+      margin-bottom: 30px;
     }
 
     .price {
-      font-size: 31px;
-      font-weight: 850;
-      letter-spacing: -.03em;
-    }
-
-    .price-note {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 0 25px;
-      border-radius: 12px;
-      background: var(--blue);
-      color: white;
-      font-size: 15px;
+      font-size: 28px;
       font-weight: 800;
-      box-shadow: 0 10px 25px rgba(8,120,249,.18);
-      transition: .18s;
+      margin-bottom: 20px;
     }
 
-    .cta:hover {
-      background: var(--blue-dark);
-      transform: translateY(-1px);
+    .price small {
+      display: block;
+      font-size: 12px;
+      font-weight: 400;
+      color: #777777;
+      margin-top: 3px;
     }
 
-    .trust {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 17px;
-      margin-top: 20px;
-      color: #555;
-      font-size: 13px;
+    .main-button {
+      display: inline-block;
+      background: #111111;
+      color: #ffffff;
+      padding: 16px 25px;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: 16px;
+      transition: transform .15s ease, opacity .15s ease;
     }
 
-    /* PRODUCT */
+    .main-button:hover {
+      transform: translateY(-2px);
+      opacity: .9;
+    }
 
     .product-card {
-      background: #f7f8fa;
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 18px;
+      background: white;
+      border-radius: 22px;
+      padding: 25px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.10);
+      text-align: center;
     }
 
-    .main-photo {
+    .product-image {
       width: 100%;
-      aspect-ratio: 1 / 1;
+      max-width: 490px;
+      height: 390px;
       object-fit: contain;
-      border-radius: 20px;
-      background: white;
-      display: block;
+      border-radius: 16px;
+      background: #f1f1ef;
     }
 
-    .thumbs {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+    .image-note {
       margin-top: 10px;
+      font-size: 11px;
+      color: #888888;
     }
 
-    .thumb {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 12px;
-      background: white;
-      border: 1px solid var(--border);
-    }
-
-    /* VIDEO */
-
-    .video-section {
-      background: var(--light);
-      padding: 78px 22px;
-    }
-
-    .video-container {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: .75fr 1.25fr;
-      gap: 52px;
-      align-items: center;
-    }
-
-    .video-text h2 {
-      font-size: 40px;
-      line-height: 1.06;
-      letter-spacing: -.045em;
-      margin: 10px 0 15px;
-    }
-
-    .video-text p {
-      font-size: 17px;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      border-radius: 20px;
-      background: #000;
-      box-shadow: 0 20px 50px rgba(0,0,0,.15);
-    }
-
-    .video-wrapper iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    /* SECTIONS */
-
-    .section {
-      padding: 76px 22px;
-    }
-
-    .section.gray {
-      background: var(--light);
+    section {
+      padding: 85px 22px;
     }
 
     .section-inner {
-      max-width: 1050px;
+      max-width: 1120px;
       margin: auto;
     }
 
     .section-title {
       text-align: center;
-      font-size: 40px;
-      line-height: 1.06;
-      letter-spacing: -.045em;
-      margin: 0 0 14px;
+      max-width: 700px;
+      margin: 0 auto 50px;
     }
 
-    .section-subtitle {
-      text-align: center;
-      color: var(--muted);
-      max-width: 650px;
-      margin: 0 auto 42px;
-    }
-
-    /* FEATURES */
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .feature {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 26px;
-    }
-
-    .feature-icon {
-      font-size: 25px;
+    .section-title h2 {
+      font-size: clamp(30px, 4vw, 45px);
+      line-height: 1.1;
+      letter-spacing: -1.5px;
       margin-bottom: 13px;
     }
 
-    .feature h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
+    .section-title p {
+      color: #666666;
+      font-size: 17px;
     }
 
-    .feature p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
-    /* HOW IT WORKS */
+    .benefit {
+      border: 1px solid #e9e9e9;
+      border-radius: 16px;
+      padding: 28px;
+      background: white;
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: #111111;
+      color: white;
+      font-size: 19px;
+      margin-bottom: 20px;
+    }
+
+    .benefit h3 {
+      font-size: 20px;
+      margin-bottom: 9px;
+    }
+
+    .benefit p {
+      color: #666666;
+      font-size: 15px;
+    }
 
     .how {
+      background: #f7f7f5;
+    }
+
+    .steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
     .step {
-      text-align: center;
-      padding: 22px;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid #e8e8e8;
     }
 
-    .step-number {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 15px;
-      background: #eaf4ff;
-      color: var(--blue-dark);
+    .number {
+      font-size: 14px;
       font-weight: 800;
+      color: #777777;
+      margin-bottom: 20px;
     }
 
     .step h3 {
-      margin: 0 0 7px;
-      font-size: 17px;
+      font-size: 21px;
+      margin-bottom: 9px;
     }
 
     .step p {
-      margin: 0;
-      color: var(--muted);
+      color: #666666;
+      font-size: 15px;
+    }
+
+    .video-section {
+      background: #111111;
+      color: white;
+    }
+
+    .video-section .section-title p {
+      color: #bdbdbd;
+    }
+
+    .video-box {
+      max-width: 850px;
+      margin: auto;
+      aspect-ratio: 16 / 9;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #222222;
+      box-shadow: 0 20px 60px rgba(0,0,0,.3);
+    }
+
+    .video-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .compatibility {
+      max-width: 760px;
+      margin: 35px auto 0;
+      padding: 18px 22px;
+      border-radius: 12px;
+      background: #f5f5f5;
+      color: #555555;
+      text-align: center;
       font-size: 14px;
     }
 
-    /* FINAL CTA */
+    .form-section {
+      background: #f7f7f5;
+    }
+
+    .form-container {
+      max-width: 720px;
+      margin: auto;
+      background: white;
+      border-radius: 20px;
+      padding: 10px;
+      box-shadow: 0 15px 45px rgba(0,0,0,.08);
+    }
 
     .final-cta {
-      max-width: 820px;
-      margin: auto;
-      background: var(--black);
-      color: white;
-      border-radius: 26px;
-      padding: 50px 30px;
       text-align: center;
+      background: #ffffff;
     }
 
     .final-cta h2 {
-      font-size: 38px;
-      line-height: 1.05;
-      letter-spacing: -.04em;
-      margin: 0 0 14px;
+      font-size: clamp(32px, 4vw, 48px);
+      letter-spacing: -1.5px;
+      margin-bottom: 15px;
     }
 
     .final-cta p {
-      color: #c8c8c8;
-      max-width: 570px;
-      margin: 0 auto 25px;
+      color: #666666;
+      max-width: 600px;
+      margin: 0 auto 28px;
     }
-
-    /* FOOTER */
 
     footer {
-      border-top: 1px solid var(--border);
-      padding: 25px 22px;
-      color: #777;
-      font-size: 12px;
+      background: #111111;
+      color: #999999;
       text-align: center;
+      padding: 28px 20px;
+      font-size: 12px;
     }
 
-    /* MOBILE */
-
-    @media (max-width: 850px) {
-
-      .hero,
-      .video-container {
+    @media (max-width: 800px) {
+      .hero-inner {
         grid-template-columns: 1fr;
+        gap: 35px;
       }
 
       .hero {
-        padding-top: 45px;
-        gap: 38px;
+        padding-top: 50px;
       }
 
-      h1 {
-        font-size: 49px;
-      }
-
-      .features,
-      .how {
+      .benefits,
+      .steps {
         grid-template-columns: 1fr;
       }
 
-      .nav-link {
-        display: none;
-      }
-    }
-
-    @media (max-width: 520px) {
-
-      .hero,
-      .section,
-      .video-section {
-        padding-left: 16px;
-        padding-right: 16px;
+      .product-image {
+        height: 300px;
       }
 
-      h1 {
-        font-size: 42px;
+      .nav {
+        height: 62px;
       }
 
-      .section-title,
-      .video-text h2,
-      .final-cta h2 {
-        font-size: 31px;
-      }
-
-      .product-card {
-        padding: 10px;
-        border-radius: 20px;
+      .nav-button {
+        padding: 9px 13px;
+        font-size: 13px;
       }
     }
   </style>
@@ -451,145 +374,177 @@
 
 <body>
 
-  <!-- BARRE DU HAUT -->
-
   <div class="topbar">
-    Livraison offerte — lancement DustGuard
+    DustGuard — Une solution simple pour limiter la dispersion de poussière pendant le perçage
   </div>
 
-
-  <!-- NAVIGATION -->
-
   <header>
-    <nav class="nav">
+    <div class="nav">
+      <div class="logo">Dust<span>Guard</span></div>
 
-      <div class="logo">
-        Dust<span>Guard</span>
-      </div>
-
-      <a class="nav-link" href="#produit">
-        Le produit
+      <a class="nav-button" href="#interesse">
+        Être informé
       </a>
-
-    </nav>
+    </div>
   </header>
-
 
   <main>
 
     <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
 
-    <section class="hero" id="produit">
+        <div>
+          <div class="badge">POUR PERCEUSES • 4 À 10 MM</div>
 
-      <div>
+          <h1>
+            Percez sans répandre de poussière partout.
+          </h1>
 
-        <div class="eyebrow">
-          <span class="dot"></span>
-          Accessoire pour perceuse
-        </div>
-
-        <h1>
-          Percez sans répandre de poussière partout.
-        </h1>
-
-        <p>
-          Le collecteur DustGuard se place autour du foret pour récupérer
-          une partie des poussières directement pendant le perçage.
-          Moins de dispersion, moins de nettoyage.
-        </p>
-
-        <div class="price-row">
+          <p>
+            DustGuard récupère une partie des poussières directement autour
+            du point de perçage pour limiter leur dispersion et réduire
+            le nettoyage après vos travaux.
+          </p>
 
           <div class="price">
             24,90 €
+            <small>Prix indicatif — disponibilité à venir</small>
           </div>
 
-          <div class="price-note">
-            Prix indicatif
-          </div>
-
+          <a class="main-button" href="#interesse">
+            Je veux être informé
+          </a>
         </div>
 
-        <a class="cta" href="#interesse">
-          Je veux être informé
-        </a>
+        <div class="product-card">
 
-        <div class="trust">
+          <img
+            class="product-image"
+            src="https://a.allegroimg.com/original/11a10e/5a7e69444b62b67f979be1362662/OSLONA-PRZECIWPYLOWA-NAKLADKA-DO-WIERTARKI-WKRETARKI-4-10mm"
+            alt="Collecteur de poussière DustGuard pour perceuse"
+            onerror="this.style.display='none';"
+          >
 
-          <span>✓ Compatible 4–10 mm</span>
-
-          <span>✓ Réutilisable</span>
-
-          <span>✓ Format compact</span>
+          <div class="image-note">
+            Illustration du produit — modèle exact à confirmer avec le fournisseur.
+          </div>
 
         </div>
 
       </div>
-
-
-      <!-- PHOTOS DU PRODUIT -->
-
-      <div class="product-card">
-
-        <img
-          class="main-photo"
-          src="https://a.allegroimg.com/original/11a10e/5a7e69444b62b67f979be1362662/OSLONA-PRZECIWPYLOWA-NAKLADKA-DO-WIERTARKI-WKRETARKI-4-10mm"
-          alt="Collecteur de poussière transparent pour perceuse"
-        >
-
-        <div class="thumbs">
-
-          <img
-            class="thumb"
-            src="https://cdn03.ciceksepeti.com/cicek/kcm92333285-1/XL/matkap-ucuna-takilan-toz-toplayici-aparat-kcm92333285-1-b99286ee1acf46b2996d79a1c29a5fef.jpg"
-            alt="Collecteur de poussière installé sur une perceuse"
-          >
-
-          <img
-            class="thumb"
-            src="https://content.rozetka.com.ua/goods/images/big/250320479.jpg"
-            alt="Collecteur de poussière transparent"
-          >
-
-          <img
-            class="thumb"
-            src="https://sklep.realneceny.pl/public/upload/sellasist_cache/original_560a6be4be66bacc2134751f7b06961d.png"
-            alt="Collecteur de poussière pour foret"
-          >
-
-        </div>
-
-      </div>
-
     </section>
 
+    <!-- BENEFITS -->
+    <section>
+      <div class="section-inner">
 
-    <!-- VIDEO -->
+        <div class="section-title">
+          <h2>Moins de poussière. Moins de nettoyage.</h2>
+          <p>
+            Un accessoire compact conçu pour accompagner vos petits travaux
+            de perçage.
+          </p>
+        </div>
 
-    <section class="video-section">
+        <div class="benefits">
 
-      <div class="video-container">
-
-        <div class="video-text">
-
-          <div class="eyebrow">
-            EN ACTION
+          <div class="benefit">
+            <div class="icon">✓</div>
+            <h3>Récupère les poussières</h3>
+            <p>
+              Le collecteur se positionne autour de la zone de perçage
+              afin de récupérer une partie des débris.
+            </p>
           </div>
 
-          <h2>
-            Voyez-le en action.
-          </h2>
+          <div class="benefit">
+            <div class="icon">↗</div>
+            <h3>Simple à utiliser</h3>
+            <p>
+              Un accessoire compact qui se met en place directement
+              autour de la zone de perçage.
+            </p>
+          </div>
 
-          <p>
-            Découvrez le principe de fonctionnement du collecteur :
-            il se positionne autour du foret afin de récupérer les
-            poussières pendant le perçage.
-          </p>
+          <div class="benefit">
+            <div class="icon">⌂</div>
+            <h3>Pour les travaux du quotidien</h3>
+            <p>
+              Idéal pour les petits travaux de bricolage à la maison
+              ou dans l'atelier.
+            </p>
+          </div>
 
         </div>
 
+      </div>
+    </section>
 
-        <div class="video-wrapper">
+    <!-- HOW IT WORKS -->
+    <section class="how">
+      <div class="section-inner">
+
+        <div class="section-title">
+          <h2>Comment ça fonctionne ?</h2>
+          <p>
+            Trois étapes simples avant de commencer votre perçage.
+          </p>
+        </div>
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="number">01</div>
+            <h3>Installez</h3>
+            <p>
+              Placez DustGuard autour de votre foret et positionnez-le
+              contre la surface à percer.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="number">02</div>
+            <h3>Percez</h3>
+            <p>
+              Effectuez votre perçage normalement en maintenant
+              l'accessoire contre la surface.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="number">03</div>
+            <h3>Nettoyez facilement</h3>
+            <p>
+              Une partie des poussières est récupérée dans le collecteur
+              plutôt que de se disperser autour du trou.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="compatibility">
+          Compatibilité annoncée : forets de diamètre 4 à 10 mm.
+          Les dimensions exactes du modèle seront confirmées avant la mise en vente.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="video-section">
+
+      <div class="section-inner">
+
+        <div class="section-title">
+          <h2>Voyez-le en action.</h2>
+          <p>
+            Découvrez le principe d'utilisation du collecteur autour
+            d'une zone de perçage.
+          </p>
+        </div>
+
+        <div class="video-box">
 
           <iframe
             src="https://www.youtube-nocookie.com/embed/6MZ1_fOOcgQ"
@@ -605,77 +560,31 @@
 
     </section>
 
-
-    <!-- AVANTAGES -->
-
-    <section class="section gray">
+    <!-- TALLY FORM -->
+    <section class="form-section" id="interesse">
 
       <div class="section-inner">
 
-        <h2 class="section-title">
-          Petit accessoire. Gros gain de confort.
-        </h2>
+        <div class="section-title">
+          <h2>Vous voulez être parmi les premiers ?</h2>
+          <p>
+            Laissez votre prénom et votre adresse e-mail.
+            Nous vous informerons lorsque DustGuard sera disponible.
+          </p>
+        </div>
 
-        <p class="section-subtitle">
-          Une solution simple pour limiter la poussière autour du point
-          de perçage lors des petits travaux de bricolage.
-        </p>
+        <div class="form-container">
 
-
-        <div class="features">
-
-          <article class="feature">
-
-            <div class="feature-icon">
-              🎯
-            </div>
-
-            <h3>
-              À la source
-            </h3>
-
-            <p>
-              Le collecteur se positionne autour du foret afin de récupérer
-              les débris au plus près du trou.
-            </p>
-
-          </article>
-
-
-          <article class="feature">
-
-            <div class="feature-icon">
-              👀
-            </div>
-
-            <h3>
-              Transparent
-            </h3>
-
-            <p>
-              La partie transparente permet de voir les poussières
-              accumulées pendant l'utilisation.
-            </p>
-
-          </article>
-
-
-          <article class="feature">
-
-            <div class="feature-icon">
-              🔄
-            </div>
-
-            <h3>
-              Réutilisable
-            </h3>
-
-            <p>
-              Ouvrez le collecteur pour vider les poussières puis
-              remettez-le en place pour une nouvelle utilisation.
-            </p>
-
-          </article>
+          <iframe
+            src="https://tally.so/embed/ODR2ek?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="500"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="Formulaire DustGuard">
+          </iframe>
 
         </div>
 
@@ -683,102 +592,19 @@
 
     </section>
 
-
-    <!-- FONCTIONNEMENT -->
-
-    <section class="section">
+    <!-- FINAL CTA -->
+    <section class="final-cta">
 
       <div class="section-inner">
 
-        <h2 class="section-title">
-          Comment ça marche ?
-        </h2>
-
-        <p class="section-subtitle">
-          Trois étapes pour préparer votre perçage.
-        </p>
-
-
-        <div class="how">
-
-          <div class="step">
-
-            <div class="step-number">
-              1
-            </div>
-
-            <h3>
-              Insérez le foret
-            </h3>
-
-            <p>
-              Le modèle présenté est conçu pour des forets
-              d'environ 4 à 10 mm.
-            </p>
-
-          </div>
-
-
-          <div class="step">
-
-            <div class="step-number">
-              2
-            </div>
-
-            <h3>
-              Positionnez-le
-            </h3>
-
-            <p>
-              Placez la partie souple contre la surface à percer.
-            </p>
-
-          </div>
-
-
-          <div class="step">
-
-            <div class="step-number">
-              3
-            </div>
-
-            <h3>
-              Percez
-            </h3>
-
-            <p>
-              Les poussières et petits débris sont récupérés
-              dans le réservoir.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- CTA FINAL -->
-
-    <section class="section gray" id="interesse">
-
-      <div class="final-cta">
-
-        <h2>
-          Envie d'un chantier plus propre ?
-        </h2>
+        <h2>Percez. Récupérez. Nettoyez moins.</h2>
 
         <p>
-          Nous préparons le lancement de DustGuard en France.
-          Laissez-nous simplement votre intérêt pour être informé.
+          DustGuard est actuellement en phase de préparation.
+          Inscrivez-vous pour être informé de sa disponibilité.
         </p>
 
-        <a
-          class="cta"
-          href="mailto:contact@dustguard.fr?subject=Je%20suis%20intéressé%20par%20DustGuard&body=Bonjour,%0A%0AJe%20souhaite%20être%20informé%20du%20lancement%20de%20DustGuard.%0A%0AMerci."
-        >
+        <a class="main-button" href="#interesse">
           Je veux être informé
         </a>
 
@@ -788,11 +614,8 @@
 
   </main>
 
-
-  <!-- FOOTER -->
-
   <footer>
-    © 2026 DustGuard — Site de présentation.
+    © 2026 DustGuard — Tous droits réservés.
   </footer>
 
 </body>
