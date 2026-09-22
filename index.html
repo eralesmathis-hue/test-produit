@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta name="google-site-verification" content="Vz7hIKgzuhwTLLY3_VeouAdVWRPFxZsNWfnvoycQrlc" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>DustGuard — Percez sans répandre de poussière partout</title>
+  <title>LUMÉA — Masque de nuit pour les lèvres</title>
 
-  <meta name="description" content="DustGuard récupère les poussières autour de votre perçage pour limiter la dispersion et réduire le nettoyage.">
-  <meta name="theme-color" content="#111111">
+  <meta
+    name="description"
+    content="LUMÉA, le masque de nuit pensé pour intégrer un geste simple et confortable à votre routine lèvres."
+  >
+
+  <meta name="theme-color" content="#f8f2ee">
 
   <style>
+    :root {
+      --cream: #fbf7f3;
+      --cream-2: #f3ebe5;
+      --rose: #c98f92;
+      --rose-dark: #8f5f63;
+      --brown: #3c302f;
+      --muted: #756866;
+      --white: #ffffff;
+      --border: rgba(60,48,47,.12);
+      --shadow: 0 20px 60px rgba(66,44,39,.10);
+      --radius: 26px;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -23,268 +39,372 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      color: #171717;
-      background: #ffffff;
-      line-height: 1.5;
+      background: var(--cream);
+      color: var(--brown);
+      line-height: 1.6;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
-    .topbar {
-      background: #111111;
-      color: #ffffff;
-      text-align: center;
-      padding: 9px 15px;
-      font-size: 13px;
-      letter-spacing: .2px;
+    img {
+      max-width: 100%;
+      display: block;
     }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* HEADER */
 
     header {
-      border-bottom: 1px solid #eeeeee;
-      background: #ffffff;
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(251,247,243,.88);
+      border-bottom: 1px solid rgba(60,48,47,.08);
     }
 
     .nav {
-      max-width: 1120px;
+      max-width: 1180px;
       margin: auto;
-      height: 70px;
-      padding: 0 22px;
+      padding: 17px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: -1px;
+      font-family: Georgia, serif;
+      font-size: 25px;
+      letter-spacing: .18em;
+      font-weight: 500;
     }
 
-    .logo span {
-      font-weight: 400;
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 14px;
     }
 
-    .nav-button {
-      background: #111111;
+    .nav-links a {
+      opacity: .78;
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-buy {
+      background: var(--brown);
       color: white;
       padding: 11px 18px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 700;
+      border-radius: 999px;
+      font-weight: 600;
     }
 
-    .hero {
-      background: #f7f7f5;
-      padding: 75px 22px 80px;
-    }
+    /* GENERAL */
 
-    .hero-inner {
-      max-width: 1120px;
+    .container {
+      width: min(1180px, calc(100% - 40px));
       margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 55px;
-      align-items: center;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #e8e8e8;
-      color: #333333;
-      padding: 7px 11px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(38px, 5vw, 64px);
-      line-height: 1.02;
-      letter-spacing: -2.5px;
-      margin-bottom: 22px;
-    }
-
-    .hero p {
-      font-size: 19px;
-      color: #5d5d5d;
-      max-width: 560px;
-      margin-bottom: 30px;
-    }
-
-    .price {
-      font-size: 28px;
-      font-weight: 800;
-      margin-bottom: 20px;
-    }
-
-    .price small {
-      display: block;
-      font-size: 12px;
-      font-weight: 400;
-      color: #777777;
-      margin-top: 3px;
-    }
-
-    .main-button {
-      display: inline-block;
-      background: #111111;
-      color: #ffffff;
-      padding: 16px 25px;
-      border-radius: 9px;
-      font-weight: 700;
-      font-size: 16px;
-      transition: transform .15s ease, opacity .15s ease;
-    }
-
-    .main-button:hover {
-      transform: translateY(-2px);
-      opacity: .9;
-    }
-
-    .product-card {
-      background: white;
-      border-radius: 22px;
-      padding: 25px;
-      box-shadow: 0 18px 50px rgba(0,0,0,.10);
-      text-align: center;
-    }
-
-    .product-image {
-      width: 100%;
-      max-width: 490px;
-      height: 390px;
-      object-fit: contain;
-      border-radius: 16px;
-      background: #f1f1ef;
-    }
-
-    .image-note {
-      margin-top: 10px;
-      font-size: 11px;
-      color: #888888;
     }
 
     section {
-      padding: 85px 22px;
+      padding: 100px 0;
     }
 
-    .section-inner {
-      max-width: 1120px;
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--rose-dark);
+      margin-bottom: 18px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    h2 {
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.02;
+      letter-spacing: -.035em;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 780px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 70px;
+      padding-top: 70px;
+    }
+
+    .hero-copy {
+      max-width: 570px;
+    }
+
+    .hero h1 {
+      font-size: clamp(52px, 7vw, 86px);
+      line-height: .96;
+      letter-spacing: -.055em;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 span {
+      color: var(--rose-dark);
+      font-style: italic;
+    }
+
+    .hero-description {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 510px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 52px;
+      padding: 0 27px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--brown);
+      color: white;
+      box-shadow: 0 14px 30px rgba(60,48,47,.18);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.5);
+    }
+
+    .hero-note {
+      margin-top: 24px;
+      font-size: 12px;
+      color: #877875;
+    }
+
+    .hero-product {
+      position: relative;
+    }
+
+    .hero-product::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: #ead2d0;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      z-index: 0;
+      filter: blur(1px);
+    }
+
+    .product-image {
+      position: relative;
+      z-index: 1;
+      width: min(560px, 100%);
       margin: auto;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      object-fit: cover;
+      background: white;
     }
 
-    .section-title {
+    /* TRUST BAR */
+
+    .trust-bar {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.35);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      padding: 25px 0;
       text-align: center;
-      max-width: 700px;
-      margin: 0 auto 50px;
     }
 
-    .section-title h2 {
-      font-size: clamp(30px, 4vw, 45px);
-      line-height: 1.1;
-      letter-spacing: -1.5px;
-      margin-bottom: 13px;
+    .trust-item {
+      font-size: 13px;
+      color: var(--muted);
     }
 
-    .section-title p {
-      color: #666666;
+    .trust-item strong {
+      display: block;
+      color: var(--brown);
+      margin-bottom: 3px;
+    }
+
+    /* STORY */
+
+    .story {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .story-image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .story-text {
+      max-width: 570px;
+    }
+
+    .story-text p {
+      margin-top: 25px;
+      color: var(--muted);
       font-size: 17px;
     }
 
+    /* BENEFITS */
+
     .benefits {
+      background: var(--cream-2);
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 55px;
+    }
+
+    .benefit-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
-    .benefit {
-      border: 1px solid #e9e9e9;
-      border-radius: 16px;
-      padding: 28px;
-      background: white;
+    .benefit-card {
+      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(60,48,47,.08);
+      border-radius: var(--radius);
+      padding: 34px;
     }
 
-    .icon {
-      width: 42px;
-      height: 42px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      background: #111111;
-      color: white;
-      font-size: 19px;
-      margin-bottom: 20px;
+    .benefit-number {
+      font-family: Georgia, serif;
+      font-size: 18px;
+      color: var(--rose-dark);
+      margin-bottom: 30px;
     }
 
-    .benefit h3 {
-      font-size: 20px;
-      margin-bottom: 9px;
+    .benefit-card h3 {
+      font-size: 27px;
+      margin-bottom: 14px;
     }
 
-    .benefit p {
-      color: #666666;
+    .benefit-card p {
+      color: var(--muted);
       font-size: 15px;
     }
 
-    .how {
-      background: #f7f7f5;
-    }
+    /* GALLERY */
 
-    .steps {
+    .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
     }
 
-    .step {
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
-      border: 1px solid #e8e8e8;
+    .gallery-main {
+      min-height: 620px;
     }
 
-    .number {
-      font-size: 14px;
-      font-weight: 800;
-      color: #777777;
-      margin-bottom: 20px;
+    .gallery-side {
+      display: grid;
+      gap: 18px;
     }
 
-    .step h3 {
-      font-size: 21px;
-      margin-bottom: 9px;
+    .gallery-card {
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #eee;
+      min-height: 290px;
     }
 
-    .step p {
-      color: #666666;
-      font-size: 15px;
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
     }
+
+    .gallery-card:hover img {
+      transform: scale(1.03);
+    }
+
+    /* VIDEO */
 
     .video-section {
-      background: #111111;
+      background: #302625;
       color: white;
     }
 
-    .video-section .section-title p {
-      color: #bdbdbd;
+    .video-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .video-copy p {
+      margin-top: 25px;
+      color: rgba(255,255,255,.7);
+      font-size: 17px;
     }
 
     .video-box {
-      max-width: 850px;
-      margin: auto;
+      position: relative;
+      width: 100%;
       aspect-ratio: 16 / 9;
-      border-radius: 18px;
       overflow: hidden;
-      background: #222222;
-      box-shadow: 0 20px 60px rgba(0,0,0,.3);
+      border-radius: 26px;
+      box-shadow: 0 25px 80px rgba(0,0,0,.25);
     }
 
     .video-box iframe {
@@ -293,81 +413,345 @@
       border: 0;
     }
 
-    .compatibility {
-      max-width: 760px;
-      margin: 35px auto 0;
-      padding: 18px 22px;
-      border-radius: 12px;
-      background: #f5f5f5;
-      color: #555555;
-      text-align: center;
-      font-size: 14px;
+    /* HOW TO */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 55px;
     }
 
-    .form-section {
-      background: #f7f7f5;
+    .step {
+      padding: 35px 0;
+      border-top: 1px solid var(--border);
     }
 
-    .form-container {
-      max-width: 720px;
-      margin: auto;
+    .step span {
+      font-size: 12px;
+      color: var(--rose-dark);
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    .step h3 {
+      font-size: 30px;
+      margin: 18px 0 12px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* PRODUCT */
+
+    .product-section {
+      background: #f0e3de;
+    }
+
+    .product-card {
       background: white;
-      border-radius: 20px;
-      padding: 10px;
-      box-shadow: 0 15px 45px rgba(0,0,0,.08);
+      border-radius: 32px;
+      padding: 25px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      box-shadow: var(--shadow);
+      align-items: center;
     }
 
-    .final-cta {
-      text-align: center;
-      background: #ffffff;
+    .product-card-image {
+      border-radius: 22px;
+      overflow: hidden;
+      background: #f7eeee;
     }
 
-    .final-cta h2 {
-      font-size: clamp(32px, 4vw, 48px);
-      letter-spacing: -1.5px;
+    .product-card-image img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 25px;
+    }
+
+    .product-info h2 {
+      font-size: clamp(38px, 5vw, 58px);
       margin-bottom: 15px;
     }
 
-    .final-cta p {
-      color: #666666;
-      max-width: 600px;
-      margin: 0 auto 28px;
+    .product-subtitle {
+      color: var(--muted);
+      margin-bottom: 25px;
     }
+
+    .price {
+      font-family: Georgia, serif;
+      font-size: 38px;
+      margin-bottom: 25px;
+    }
+
+    .price small {
+      display: block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .product-points {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .product-points li {
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .product-points li::before {
+      content: "✓";
+      color: var(--rose-dark);
+      font-weight: bold;
+      margin-right: 9px;
+    }
+
+    .buy-button {
+      width: 100%;
+      min-height: 58px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--brown);
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .buy-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px rgba(60,48,47,.2);
+    }
+
+    .shipping-note {
+      text-align: center;
+      font-size: 11px;
+      color: #8b7d79;
+      margin-top: 14px;
+    }
+
+    /* FAQ */
+
+    .faq {
+      max-width: 800px;
+      margin: 55px auto 0;
+    }
+
+    details {
+      border-top: 1px solid var(--border);
+      padding: 22px 0;
+    }
+
+    details:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      font-family: Georgia, serif;
+      font-size: 21px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details p {
+      color: var(--muted);
+      margin-top: 14px;
+      font-size: 15px;
+    }
+
+    /* CTA */
+
+    .final-cta {
+      text-align: center;
+      padding: 120px 20px;
+      background:
+        radial-gradient(circle at center, #ead2d0 0, #ead2d0 20%, transparent 55%);
+    }
+
+    .final-cta h2 {
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .final-cta p {
+      max-width: 530px;
+      margin: 25px auto 32px;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
 
     footer {
-      background: #111111;
-      color: #999999;
-      text-align: center;
-      padding: 28px 20px;
-      font-size: 12px;
+      background: #2d2524;
+      color: white;
+      padding: 45px 0;
     }
 
-    @media (max-width: 800px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 35px;
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    footer .logo {
+      color: white;
+    }
+
+    footer p {
+      color: rgba(255,255,255,.55);
+      font-size: 12px;
+      max-width: 420px;
+      margin-top: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
+
+      section {
+        padding: 75px 0;
+      }
+
+      .nav-links {
+        display: none;
       }
 
       .hero {
-        padding-top: 50px;
+        grid-template-columns: 1fr;
+        gap: 50px;
+        min-height: auto;
+        padding-top: 55px;
       }
 
-      .benefits,
+      .hero-copy {
+        max-width: none;
+      }
+
+      .hero-product {
+        order: -1;
+      }
+
+      .hero-product::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .story,
+      .video-layout,
+      .product-card {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit-grid,
       .steps {
         grid-template-columns: 1fr;
       }
 
-      .product-image {
-        height: 300px;
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-main {
+        min-height: 450px;
+      }
+
+      .gallery-side {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .product-info {
+        padding: 10px 10px 20px;
+      }
+
+      .video-copy {
+        order: 1;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .container {
+        width: min(100% - 28px, 1180px);
       }
 
       .nav {
-        height: 62px;
+        padding-left: 14px;
+        padding-right: 14px;
       }
 
-      .nav-button {
-        padding: 9px 13px;
-        font-size: 13px;
+      .nav-buy {
+        padding: 9px 14px;
+        font-size: 12px;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .gallery-side {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-main {
+        min-height: 350px;
+      }
+
+      .gallery-card {
+        min-height: 280px;
+      }
+
+      .product-card {
+        padding: 14px;
+        border-radius: 23px;
+      }
+
+      .product-info h2 {
+        font-size: 42px;
       }
     }
   </style>
@@ -375,181 +759,301 @@
 
 <body>
 
-  <div class="topbar">
-    DustGuard — Une solution simple pour limiter la dispersion de poussière pendant le perçage
-  </div>
+  <!-- HEADER -->
 
   <header>
-    <div class="nav">
-      <div class="logo">Dust<span>Guard</span></div>
+    <nav class="nav">
+      <a href="#" class="logo">LUMÉA</a>
 
-      <a class="nav-button" href="#interesse">
-        Être informé
-      </a>
-    </div>
+      <div class="nav-links">
+        <a href="#rituel">Le rituel</a>
+        <a href="#galerie">Découvrir</a>
+        <a href="#faq">FAQ</a>
+      </div>
+
+      <a href="#acheter" class="nav-buy">Acheter</a>
+    </nav>
   </header>
+
+
+  <!-- HERO -->
 
   <main>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
+    <section class="container hero">
 
-        <div>
-          <div class="badge">POUR PERCEUSES • 4 À 10 MM</div>
+      <div class="hero-copy">
 
-          <h1>
-            Percez sans répandre de poussière partout.
-          </h1>
+        <div class="eyebrow">
+          Soin lèvres · Rituel du soir
+        </div>
 
-          <p>
-            DustGuard récupère une partie des poussières directement autour
-            du point de perçage pour limiter leur dispersion et réduire
-            le nettoyage après vos travaux.
-          </p>
+        <h1>
+          Le petit rituel<br>
+          <span>avant la nuit.</span>
+        </h1>
 
-          <div class="price">
-            24,90 €
-            <small>Prix indicatif — disponibilité à venir</small>
-          </div>
+        <p class="hero-description">
+          Découvrez LUMÉA, un masque de nuit pour les lèvres pensé
+          pour accompagner votre routine beauté du soir avec un geste
+          simple, confortable et agréable.
+        </p>
 
-          <a class="main-button" href="#interesse">
-            Je veux être informé
+        <div class="hero-actions">
+          <a href="#acheter" class="btn btn-primary">
+            Découvrir LUMÉA
+          </a>
+
+          <a href="#rituel" class="btn btn-secondary">
+            Voir le rituel
           </a>
         </div>
 
-        <div class="product-card">
+        <p class="hero-note">
+          Une texture soin à intégrer simplement à votre routine du soir.
+        </p>
+
+      </div>
+
+
+      <div class="hero-product">
+
+        <img
+          class="product-image"
+          src="https://s.alicdn.com/@sc04/kf/Ha419df58d85f4b33a120e4aef8c3d0282.jpg_960x960q80.jpg"
+          alt="Masque de nuit pour les lèvres LUMÉA"
+        >
+
+      </div>
+
+    </section>
+
+
+    <!-- TRUST -->
+
+    <div class="trust-bar">
+
+      <div class="container trust-grid">
+
+        <div class="trust-item">
+          <strong>Rituel du soir</strong>
+          Un geste simple
+        </div>
+
+        <div class="trust-item">
+          <strong>Format 20 g</strong>
+          Facile à emporter
+        </div>
+
+        <div class="trust-item">
+          <strong>Application simple</strong>
+          Quelques instants avant la nuit
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- STORY -->
+
+    <section id="rituel" class="container">
+
+      <div class="story">
+
+        <div class="story-image">
 
           <img
-            class="product-image"
-            src="https://a.allegroimg.com/original/11a10e/5a7e69444b62b67f979be1362662/OSLONA-PRZECIWPYLOWA-NAKLADKA-DO-WIERTARKI-WKRETARKI-4-10mm"
-            alt="Collecteur de poussière DustGuard pour perceuse"
-            onerror="this.style.display='none';"
+            src="https://s.alicdn.com/@sc04/kf/Hba94ee26ebf34a489f4c0bb8887168adR.jpg_960x960q80.jpg"
+            alt="Présentation du masque de nuit pour les lèvres"
           >
 
-          <div class="image-note">
-            Illustration du produit — modèle exact à confirmer avec le fournisseur.
+        </div>
+
+        <div class="story-text">
+
+          <div class="eyebrow">
+            Le concept LUMÉA
           </div>
+
+          <h2>
+            Une minute pour soi.
+          </h2>
+
+          <p>
+            Le soir, la routine beauté n'a pas besoin d'être compliquée.
+            LUMÉA s'intègre naturellement à ce moment calme avant de dormir.
+          </p>
+
+          <p>
+            Appliquez une petite quantité sur les lèvres, puis laissez
+            le soin accompagner votre routine nocturne.
+          </p>
 
         </div>
 
       </div>
+
     </section>
+
 
     <!-- BENEFITS -->
-    <section>
-      <div class="section-inner">
 
-        <div class="section-title">
-          <h2>Moins de poussière. Moins de nettoyage.</h2>
-          <p>
-            Un accessoire compact conçu pour accompagner vos petits travaux
-            de perçage.
-          </p>
+    <section class="benefits">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            Pourquoi l'intégrer ?
+          </div>
+
+          <h2>
+            Simple. Doux.<br>
+            Essentiel.
+          </h2>
+
         </div>
 
-        <div class="benefits">
 
-          <div class="benefit">
-            <div class="icon">✓</div>
-            <h3>Récupère les poussières</h3>
+        <div class="benefit-grid">
+
+          <article class="benefit-card">
+
+            <div class="benefit-number">01</div>
+
+            <h3>Le soir</h3>
+
             <p>
-              Le collecteur se positionne autour de la zone de perçage
-              afin de récupérer une partie des débris.
+              Un geste facile à ajouter à votre routine beauté avant
+              d'aller dormir.
             </p>
+
+          </article>
+
+
+          <article class="benefit-card">
+
+            <div class="benefit-number">02</div>
+
+            <h3>La texture</h3>
+
+            <p>
+              Une texture pensée pour être appliquée simplement sur
+              les lèvres.
+            </p>
+
+          </article>
+
+
+          <article class="benefit-card">
+
+            <div class="benefit-number">03</div>
+
+            <h3>Le format</h3>
+
+            <p>
+              Un petit format pratique à garder dans votre salle de
+              bain ou votre trousse beauté.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- GALLERY -->
+
+    <section id="galerie" class="container">
+
+      <div class="section-heading">
+
+        <div class="eyebrow">
+          L'objet
+        </div>
+
+        <h2>
+          Pensé pour votre<br>
+          routine beauté.
+        </h2>
+
+      </div>
+
+
+      <div class="gallery-grid">
+
+        <div class="gallery-card gallery-main">
+
+          <img
+            src="https://s.alicdn.com/@sc04/kf/H1ba2803cf6774d23b826576f8625541dh.jpg_960x960q80.jpg"
+            alt="Masque lèvres présenté en détail"
+          >
+
+        </div>
+
+
+        <div class="gallery-side">
+
+          <div class="gallery-card">
+
+            <img
+              src="https://s.alicdn.com/@sc04/kf/H8172d7bba5284b489c120266a929b379j.jpg_960x960q80.jpg"
+              alt="Masque lèvres et présentation du produit"
+            >
+
           </div>
 
-          <div class="benefit">
-            <div class="icon">↗</div>
-            <h3>Simple à utiliser</h3>
-            <p>
-              Un accessoire compact qui se met en place directement
-              autour de la zone de perçage.
-            </p>
-          </div>
+          <div class="gallery-card">
 
-          <div class="benefit">
-            <div class="icon">⌂</div>
-            <h3>Pour les travaux du quotidien</h3>
-            <p>
-              Idéal pour les petits travaux de bricolage à la maison
-              ou dans l'atelier.
-            </p>
+            <img
+              src="https://s.alicdn.com/@sc04/kf/Ha419df58d85f4b33a120e4aef8c3d0282.jpg_960x960q80.jpg"
+              alt="Pot de masque pour les lèvres"
+            >
+
           </div>
 
         </div>
 
       </div>
+
     </section>
 
-    <!-- HOW IT WORKS -->
-    <section class="how">
-      <div class="section-inner">
-
-        <div class="section-title">
-          <h2>Comment ça fonctionne ?</h2>
-          <p>
-            Trois étapes simples avant de commencer votre perçage.
-          </p>
-        </div>
-
-        <div class="steps">
-
-          <div class="step">
-            <div class="number">01</div>
-            <h3>Installez</h3>
-            <p>
-              Placez DustGuard autour de votre foret et positionnez-le
-              contre la surface à percer.
-            </p>
-          </div>
-
-          <div class="step">
-            <div class="number">02</div>
-            <h3>Percez</h3>
-            <p>
-              Effectuez votre perçage normalement en maintenant
-              l'accessoire contre la surface.
-            </p>
-          </div>
-
-          <div class="step">
-            <div class="number">03</div>
-            <h3>Nettoyez facilement</h3>
-            <p>
-              Une partie des poussières est récupérée dans le collecteur
-              plutôt que de se disperser autour du trou.
-            </p>
-          </div>
-
-        </div>
-
-        <div class="compatibility">
-          Compatibilité annoncée : forets de diamètre 4 à 10 mm.
-          Les dimensions exactes du modèle seront confirmées avant la mise en vente.
-        </div>
-
-      </div>
-    </section>
 
     <!-- VIDEO -->
+
     <section class="video-section">
 
-      <div class="section-inner">
+      <div class="container video-layout">
 
-        <div class="section-title">
-          <h2>Voyez-le en action.</h2>
+        <div class="video-copy">
+
+          <div class="eyebrow">
+            Le geste du soir
+          </div>
+
+          <h2>
+            Quelques instants.<br>
+            Puis la nuit.
+          </h2>
+
           <p>
-            Découvrez le principe d'utilisation du collecteur autour
-            d'une zone de perçage.
+            Inspirez-vous du rituel des masques de nuit pour les lèvres
+            et ajoutez simplement ce geste à votre routine beauté.
           </p>
+
         </div>
+
 
         <div class="video-box">
 
           <iframe
-            src="https://www.youtube-nocookie.com/embed/6MZ1_fOOcgQ"
-            title="Démonstration d'un collecteur de poussière pour perceuse"
+            src="https://www.youtube.com/embed/lZG_faZsqH0"
+            title="Lip Sleeping Mask"
             loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen>
@@ -561,31 +1065,152 @@
 
     </section>
 
-    <!-- TALLY FORM -->
-    <section class="form-section" id="interesse">
 
-      <div class="section-inner">
+    <!-- HOW TO -->
 
-        <div class="section-title">
-          <h2>Vous voulez être parmi les premiers ?</h2>
-          <p>
-            Laissez votre prénom et votre adresse e-mail.
-            Nous vous informerons lorsque DustGuard sera disponible.
-          </p>
+    <section class="container">
+
+      <div class="section-heading">
+
+        <div class="eyebrow">
+          Comment l'utiliser
         </div>
 
-        <div class="form-container">
+        <h2>
+          Trois étapes.<br>
+          Rien de plus.
+        </h2>
 
-          <iframe
-            src="https://tally.so/embed/ODR2ek?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-            loading="lazy"
-            width="100%"
-            height="500"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            title="Formulaire DustGuard">
-          </iframe>
+      </div>
+
+
+      <div class="steps">
+
+        <article class="step">
+
+          <span>ÉTAPE 01</span>
+
+          <h3>Préparez</h3>
+
+          <p>
+            Nettoyez délicatement vos lèvres avant votre routine du soir.
+          </p>
+
+        </article>
+
+
+        <article class="step">
+
+          <span>ÉTAPE 02</span>
+
+          <h3>Appliquez</h3>
+
+          <p>
+            Prélevez une petite quantité puis appliquez-la uniformément
+            sur les lèvres.
+          </p>
+
+        </article>
+
+
+        <article class="step">
+
+          <span>ÉTAPE 03</span>
+
+          <h3>Laissez agir</h3>
+
+          <p>
+            Laissez le soin accompagner votre routine pendant la nuit
+            conformément aux instructions du produit.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRODUCT / BUY -->
+
+    <section id="acheter" class="product-section">
+
+      <div class="container">
+
+        <div class="product-card">
+
+          <div class="product-card-image">
+
+            <img
+              src="https://s.alicdn.com/@sc04/kf/Hba94ee26ebf34a489f4c0bb8887168adR.jpg_960x960q80.jpg"
+              alt="LUMÉA masque de nuit pour les lèvres"
+            >
+
+          </div>
+
+
+          <div class="product-info">
+
+            <div class="eyebrow">
+              LUMÉA · 20 g
+            </div>
+
+            <h2>
+              Masque de nuit<br>
+              pour les lèvres
+            </h2>
+
+            <p class="product-subtitle">
+              Un geste soin simple à intégrer à votre routine du soir.
+            </p>
+
+            <div class="price">
+              24,90 €
+              <small>Prix indicatif — livraison calculée à la commande</small>
+            </div>
+
+
+            <ul class="product-points">
+
+              <li>
+                Format 20 g
+              </li>
+
+              <li>
+                Application simple
+              </li>
+
+              <li>
+                Pensé pour la routine du soir
+              </li>
+
+              <li>
+                Format pratique
+              </li>
+
+            </ul>
+
+
+            <!--
+              IMPORTANT :
+              Remplace le href ci-dessous par ton vrai lien
+              de paiement dès que Stripe / Shopify / autre
+              solution de paiement sera configurée.
+            -->
+
+            <a
+              class="buy-button"
+              href="#commande"
+              onclick="openOrder(); return false;"
+            >
+              Acheter maintenant
+            </a>
+
+            <div class="shipping-note">
+              Paiement sécurisé · Livraison en France
+            </div>
+
+          </div>
 
         </div>
 
@@ -593,31 +1218,158 @@
 
     </section>
 
-    <!-- FINAL CTA -->
-    <section class="final-cta">
 
-      <div class="section-inner">
+    <!-- FAQ -->
 
-        <h2>Percez. Récupérez. Nettoyez moins.</h2>
+    <section id="faq" class="container">
 
-        <p>
-          DustGuard est actuellement en phase de préparation.
-          Inscrivez-vous pour être informé de sa disponibilité.
-        </p>
+      <div class="section-heading">
 
-        <a class="main-button" href="#interesse">
-          Je veux être informé
-        </a>
+        <div class="eyebrow">
+          Questions fréquentes
+        </div>
+
+        <h2>
+          Vous voulez<br>
+          en savoir plus ?
+        </h2>
 
       </div>
+
+
+      <div class="faq">
+
+        <details>
+          <summary>Quand utiliser le masque ?</summary>
+
+          <p>
+            Il est présenté comme un geste de routine du soir. Suivez
+            toujours les instructions figurant sur l'emballage du produit.
+          </p>
+
+        </details>
+
+
+        <details>
+          <summary>Quelle quantité appliquer ?</summary>
+
+          <p>
+            Une petite quantité suffit généralement pour couvrir les lèvres.
+            Les indications exactes doivent être celles fournies avec
+            le produit commercialisé.
+          </p>
+
+        </details>
+
+
+        <details>
+          <summary>Le produit convient-il à tout le monde ?</summary>
+
+          <p>
+            Consultez la liste d'ingrédients et les précautions du produit
+            avant utilisation. En cas de réaction inhabituelle, cessez
+            l'utilisation et demandez conseil à un professionnel de santé.
+          </p>
+
+        </details>
+
+
+        <details>
+          <summary>Comment sera expédiée ma commande ?</summary>
+
+          <p>
+            Les modalités de livraison seront indiquées au moment de la
+            commande selon le mode d'expédition disponible.
+          </p>
+
+        </details>
+
+      </div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+
+    <section class="final-cta">
+
+      <div class="eyebrow">
+        LUMÉA
+      </div>
+
+      <h2>
+        Faites de votre routine du soir
+        un moment pour vous.
+      </h2>
+
+      <p>
+        Découvrez le masque de nuit pour les lèvres LUMÉA.
+      </p>
+
+      <a href="#acheter" class="btn btn-primary">
+        Acheter maintenant
+      </a>
 
     </section>
 
   </main>
 
+
+  <!-- FOOTER -->
+
   <footer>
-    © 2026 DustGuard — Tous droits réservés.
+
+    <div class="container footer-inner">
+
+      <div>
+
+        <div class="logo">
+          LUMÉA
+        </div>
+
+        <p>
+          Soin et beauté des lèvres. Présentation produit.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="#faq">FAQ</a>
+        <a href="#acheter">Acheter</a>
+
+      </div>
+
+    </div>
+
   </footer>
+
+
+  <!--
+    FENÊTRE DE COMMANDE
+    Pour l'instant elle ne débite rien.
+    Elle sert à préparer le bouton.
+  -->
+
+  <script>
+
+    function openOrder() {
+
+      const confirmed = confirm(
+        "La boutique est actuellement en préparation. " +
+        "Le système de paiement sera activé dès que le produit sera disponible à la vente."
+      );
+
+      if (confirmed) {
+        document.getElementById("acheter").scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+
+    }
+
+  </script>
 
 </body>
 </html>
