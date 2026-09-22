@@ -13,6 +13,22 @@
 
   <meta name="theme-color" content="#f8f2ee">
 
+  <!-- GOOGLE ANALYTICS 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8CB5Z9K81C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-8CB5Z9K81C', {
+      page_title: 'LUMÉA - Masque de nuit pour les lèvres'
+    });
+  </script>
+
   <style>
     :root {
       --cream: #fbf7f3;
@@ -58,8 +74,6 @@
     a {
       -webkit-tap-highlight-color: transparent;
     }
-
-    /* HEADER */
 
     header {
       position: sticky;
@@ -111,8 +125,6 @@
       font-weight: 600;
     }
 
-    /* GENERAL */
-
     .container {
       width: min(1180px, calc(100% - 40px));
       margin: auto;
@@ -147,8 +159,6 @@
     .muted {
       color: var(--muted);
     }
-
-    /* HERO */
 
     .hero {
       min-height: 780px;
@@ -250,8 +260,6 @@
       background: white;
     }
 
-    /* TRUST BAR */
-
     .trust-bar {
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
@@ -277,8 +285,6 @@
       margin-bottom: 3px;
     }
 
-    /* STORY */
-
     .story {
       display: grid;
       grid-template-columns: .9fr 1.1fr;
@@ -301,8 +307,6 @@
       color: var(--muted);
       font-size: 17px;
     }
-
-    /* BENEFITS */
 
     .benefits {
       background: var(--cream-2);
@@ -343,8 +347,6 @@
       font-size: 15px;
     }
 
-    /* GALLERY */
-
     .gallery-grid {
       display: grid;
       grid-template-columns: 1.25fr .75fr;
@@ -377,8 +379,6 @@
     .gallery-card:hover img {
       transform: scale(1.03);
     }
-
-    /* VIDEO */
 
     .video-section {
       background: #302625;
@@ -413,8 +413,6 @@
       border: 0;
     }
 
-    /* HOW TO */
-
     .steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -443,8 +441,6 @@
       color: var(--muted);
       font-size: 15px;
     }
-
-    /* PRODUCT */
 
     .product-section {
       background: #f0e3de;
@@ -531,6 +527,9 @@
       font-weight: 700;
       cursor: pointer;
       transition: transform .2s, box-shadow .2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .buy-button:hover {
@@ -544,8 +543,6 @@
       color: #8b7d79;
       margin-top: 14px;
     }
-
-    /* FAQ */
 
     .faq {
       max-width: 800px;
@@ -578,8 +575,6 @@
       font-size: 15px;
     }
 
-    /* CTA */
-
     .final-cta {
       text-align: center;
       padding: 120px 20px;
@@ -597,8 +592,6 @@
       margin: 25px auto 32px;
       color: var(--muted);
     }
-
-    /* FOOTER */
 
     footer {
       background: #2d2524;
@@ -631,7 +624,93 @@
       font-size: 13px;
     }
 
-    /* RESPONSIVE */
+    /* MODALE DE TEST */
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(35,27,26,.58);
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal {
+      width: min(460px, 100%);
+      background: white;
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: 0 30px 100px rgba(0,0,0,.25);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 18px;
+      border: 0;
+      background: transparent;
+      font-size: 25px;
+      cursor: pointer;
+      color: var(--muted);
+    }
+
+    .modal h3 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .modal-text {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .modal-product {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 17px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 22px;
+    }
+
+    .modal-price {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      white-space: nowrap;
+    }
+
+    .modal-action {
+      width: 100%;
+      min-height: 54px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--brown);
+      color: white;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .modal-action.secondary {
+      background: var(--rose-dark);
+      margin-top: 10px;
+    }
+
+    .modal-small {
+      text-align: center;
+      color: #8b7d79;
+      font-size: 11px;
+      margin-top: 15px;
+    }
 
     @media (max-width: 850px) {
 
@@ -759,8 +838,6 @@
 
 <body>
 
-  <!-- HEADER -->
-
   <header>
     <nav class="nav">
       <a href="#" class="logo">LUMÉA</a>
@@ -771,12 +848,16 @@
         <a href="#faq">FAQ</a>
       </div>
 
-      <a href="#acheter" class="nav-buy">Acheter</a>
+      <a
+        href="#acheter"
+        class="nav-buy"
+        onclick="trackEvent('nav_buy_click');"
+      >
+        Acheter
+      </a>
     </nav>
   </header>
 
-
-  <!-- HERO -->
 
   <main>
 
@@ -800,13 +881,19 @@
         </p>
 
         <div class="hero-actions">
-          <a href="#acheter" class="btn btn-primary">
+
+          <a
+            href="#acheter"
+            class="btn btn-primary"
+            onclick="trackEvent('hero_buy_click');"
+          >
             Découvrir LUMÉA
           </a>
 
           <a href="#rituel" class="btn btn-secondary">
             Voir le rituel
           </a>
+
         </div>
 
         <p class="hero-note">
@@ -828,8 +915,6 @@
 
     </section>
 
-
-    <!-- TRUST -->
 
     <div class="trust-bar">
 
@@ -854,8 +939,6 @@
 
     </div>
 
-
-    <!-- STORY -->
 
     <section id="rituel" class="container">
 
@@ -896,8 +979,6 @@
 
     </section>
 
-
-    <!-- BENEFITS -->
 
     <section class="benefits">
 
@@ -967,8 +1048,6 @@
     </section>
 
 
-    <!-- GALLERY -->
-
     <section id="galerie" class="container">
 
       <div class="section-heading">
@@ -1024,8 +1103,6 @@
     </section>
 
 
-    <!-- VIDEO -->
-
     <section class="video-section">
 
       <div class="container video-layout">
@@ -1065,8 +1142,6 @@
 
     </section>
 
-
-    <!-- HOW TO -->
 
     <section class="container">
 
@@ -1131,8 +1206,6 @@
     </section>
 
 
-    <!-- PRODUCT / BUY -->
-
     <section id="acheter" class="product-section">
 
       <div class="container">
@@ -1172,39 +1245,21 @@
 
             <ul class="product-points">
 
-              <li>
-                Format 20 g
-              </li>
-
-              <li>
-                Application simple
-              </li>
-
-              <li>
-                Pensé pour la routine du soir
-              </li>
-
-              <li>
-                Format pratique
-              </li>
+              <li>Format 20 g</li>
+              <li>Application simple</li>
+              <li>Pensé pour la routine du soir</li>
+              <li>Format pratique</li>
 
             </ul>
 
 
-            <!--
-              IMPORTANT :
-              Remplace le href ci-dessous par ton vrai lien
-              de paiement dès que Stripe / Shopify / autre
-              solution de paiement sera configurée.
-            -->
-
-            <a
+            <button
+              type="button"
               class="buy-button"
-              href="#commande"
-              onclick="openOrder(); return false;"
+              onclick="openOrder();"
             >
               Acheter maintenant
-            </a>
+            </button>
 
             <div class="shipping-note">
               Paiement sécurisé · Livraison en France
@@ -1218,8 +1273,6 @@
 
     </section>
 
-
-    <!-- FAQ -->
 
     <section id="faq" class="container">
 
@@ -1241,55 +1294,42 @@
 
         <details>
           <summary>Quand utiliser le masque ?</summary>
-
           <p>
             Il est présenté comme un geste de routine du soir. Suivez
             toujours les instructions figurant sur l'emballage du produit.
           </p>
-
         </details>
-
 
         <details>
           <summary>Quelle quantité appliquer ?</summary>
-
           <p>
             Une petite quantité suffit généralement pour couvrir les lèvres.
             Les indications exactes doivent être celles fournies avec
             le produit commercialisé.
           </p>
-
         </details>
-
 
         <details>
           <summary>Le produit convient-il à tout le monde ?</summary>
-
           <p>
             Consultez la liste d'ingrédients et les précautions du produit
             avant utilisation. En cas de réaction inhabituelle, cessez
             l'utilisation et demandez conseil à un professionnel de santé.
           </p>
-
         </details>
-
 
         <details>
           <summary>Comment sera expédiée ma commande ?</summary>
-
           <p>
             Les modalités de livraison seront indiquées au moment de la
             commande selon le mode d'expédition disponible.
           </p>
-
         </details>
 
       </div>
 
     </section>
 
-
-    <!-- FINAL CTA -->
 
     <section class="final-cta">
 
@@ -1306,7 +1346,11 @@
         Découvrez le masque de nuit pour les lèvres LUMÉA.
       </p>
 
-      <a href="#acheter" class="btn btn-primary">
+      <a
+        href="#acheter"
+        class="btn btn-primary"
+        onclick="trackEvent('final_cta_click');"
+      >
         Acheter maintenant
       </a>
 
@@ -1314,8 +1358,6 @@
 
   </main>
 
-
-  <!-- FOOTER -->
 
   <footer>
 
@@ -1346,28 +1388,252 @@
   </footer>
 
 
-  <!--
-    FENÊTRE DE COMMANDE
-    Pour l'instant elle ne débite rien.
-    Elle sert à préparer le bouton.
-  -->
+  <!-- MODALE DE TEST D'ACHAT -->
+
+  <div
+    id="orderModal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+  >
+
+    <div class="modal">
+
+      <button
+        type="button"
+        class="modal-close"
+        onclick="closeOrder();"
+        aria-label="Fermer"
+      >
+        ×
+      </button>
+
+      <div class="eyebrow">
+        LUMÉA · 20 g
+      </div>
+
+      <h3 id="modalTitle">
+        Votre commande
+      </h3>
+
+      <p class="modal-text">
+        Vous êtes sur le point de poursuivre vers la commande.
+      </p>
+
+      <div class="modal-product">
+
+        <div>
+          Masque de nuit<br>
+          pour les lèvres
+        </div>
+
+        <div class="modal-price">
+          24,90 €
+        </div>
+
+      </div>
+
+      <button
+        type="button"
+        class="modal-action"
+        onclick="registerCheckoutIntent();"
+      >
+        Continuer
+      </button>
+
+      <button
+        type="button"
+        class="modal-action secondary"
+        onclick="registerInterest();"
+      >
+        Je veux être prévenu
+      </button>
+
+      <div class="modal-small">
+        Ceci est actuellement une étape de validation.
+        Aucun paiement ne sera effectué.
+      </div>
+
+    </div>
+
+  </div>
+
 
   <script>
 
-    function openOrder() {
+    /*
+      ==========================================
+      CONFIGURATION DU TEST
+      ==========================================
+    */
 
-      const confirmed = confirm(
-        "La boutique est actuellement en préparation. " +
-        "Le système de paiement sera activé dès que le produit sera disponible à la vente."
-      );
+    const PRODUCT = {
+      id: "lumea_lip_mask_20g",
+      name: "LUMÉA Masque de nuit pour les lèvres",
+      price: 24.90,
+      currency: "EUR"
+    };
 
-      if (confirmed) {
-        document.getElementById("acheter").scrollIntoView({
-          behavior: "smooth"
-        });
+
+    /*
+      ==========================================
+      ENVOI DES ÉVÉNEMENTS À GOOGLE ANALYTICS
+      ==========================================
+    */
+
+    function trackEvent(eventName, extraData = {}) {
+
+      if (typeof gtag !== "function") {
+        return;
       }
 
+      gtag("event", eventName, {
+        currency: PRODUCT.currency,
+        value: PRODUCT.price,
+        items: [
+          {
+            item_id: PRODUCT.id,
+            item_name: PRODUCT.name,
+            price: PRODUCT.price,
+            quantity: 1
+          }
+        ],
+        ...extraData
+      });
+
     }
+
+
+    /*
+      ==========================================
+      VISITE DE LA FICHE PRODUIT
+      ==========================================
+    */
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      trackEvent("view_product");
+
+    });
+
+
+    /*
+      ==========================================
+      OUVERTURE DE LA MODALE
+      = INTENTION D'ACHAT
+      ==========================================
+    */
+
+    function openOrder() {
+
+      trackEvent("begin_checkout");
+
+      const modal = document.getElementById("orderModal");
+
+      modal.classList.add("active");
+
+      document.body.style.overflow = "hidden";
+
+    }
+
+
+    /*
+      ==========================================
+      FERMETURE
+      ==========================================
+    */
+
+    function closeOrder() {
+
+      const modal = document.getElementById("orderModal");
+
+      modal.classList.remove("active");
+
+      document.body.style.overflow = "";
+
+    }
+
+
+    /*
+      ==========================================
+      CLIC SUR "CONTINUER"
+      ==========================================
+    */
+
+    function registerCheckoutIntent() {
+
+      trackEvent("checkout_intent");
+
+      const modal = document.getElementById("orderModal");
+
+      modal.querySelector(".modal-text").textContent =
+        "Merci. Votre intérêt pour LUMÉA est enregistré. " +
+        "La commande sera disponible lorsque le produit sera prêt à être commercialisé.";
+
+      modal.querySelector(".modal-action").textContent =
+        "Je veux être prévenu";
+
+      modal.querySelector(".modal-action").onclick =
+        registerInterest;
+
+    }
+
+
+    /*
+      ==========================================
+      CLIC SUR "JE VEUX ÊTRE PRÉVENU"
+      ==========================================
+    */
+
+    function registerInterest() {
+
+      trackEvent("lead_intent");
+
+      /*
+        Ouverture du formulaire Tally.
+      */
+
+      window.open(
+        "https://tally.so/r/ODR2ek",
+        "_blank",
+        "noopener,noreferrer"
+      );
+
+    }
+
+
+    /*
+      ==========================================
+      FERMETURE EN CLIQUANT À L'EXTÉRIEUR
+      ==========================================
+    */
+
+    document.getElementById("orderModal").addEventListener(
+      "click",
+      function (event) {
+
+        if (event.target === this) {
+          closeOrder();
+        }
+
+      }
+    );
+
+
+    /*
+      ==========================================
+      TOUCHE ESCAPE
+      ==========================================
+    */
+
+    document.addEventListener("keydown", function (event) {
+
+      if (event.key === "Escape") {
+        closeOrder();
+      }
+
+    });
 
   </script>
 
