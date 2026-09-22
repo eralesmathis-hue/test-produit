@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eralesmathis-hue.github.io/test-produit/sitemap.xml
